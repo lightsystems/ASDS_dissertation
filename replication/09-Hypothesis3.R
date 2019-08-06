@@ -57,8 +57,10 @@ ggplot(tstat_simil_target2, aes(Var1, Var2, fill = value))+
   scale_fill_gradient2(low = "white", high = "#009E73") +
   theme_minimal()+ # minimal theme
   theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1)) +
-  scale_x_discrete(name="") +
-  scale_y_discrete(name="") +
+  scale_x_discrete(name="", labels=c("(1) from Netto uyoku followers\nto Netto uyoku opinion leaders",
+                                     "(2) from Netto uyoku followers\nto liberal opinion leaders",
+                                     "(3) from Liberal followers\nto liberal opinion leaders")) +
+  scale_y_discrete(name="",labels=c("(1)","(2)","(3)")) +
   coord_fixed()
 ggsave(paste0(figures.folder, "Figure 6 similarity.pdf"), width = 5, height = 5)
 

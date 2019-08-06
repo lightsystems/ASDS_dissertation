@@ -35,6 +35,7 @@ table_follow <- table_follow[table_follow$Var2 != "Media",]
 ## create a bar chart
 ggplot(table_follow) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
   scale_fill_brewer(palette = "Reds",name = "follow opposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "Figure 4-1 follow-zero.pdf"), width = 6, height = 3)
@@ -215,6 +216,7 @@ table_act <- table_act[table_act$Var2 != "Media",]
 ## create a graph
 ggplot(table_act) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
   scale_fill_brewer(palette = "Reds",name="action to opposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "Figure 4-2 action-zero.pdf"), width = 6, height = 3)

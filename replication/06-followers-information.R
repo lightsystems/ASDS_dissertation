@@ -57,8 +57,8 @@ cluster_fol <- table(all_follow$category,dnn="Cluster") %>%
   data.frame(stringsAsFactors = F)  ## create frequency table
 cluster_fol$Percentage <- cluster_fol$Freq / sum(cluster_fol$Freq)  ## add percentage
 
-pdf(paste0(figures.folder, "Figure 3 FLpercentage.pdf"), width = 5, height = 5)
-pie(cluster_fol$Freq, 
+pdf(paste0(figures.folder, "Figure 3 FLpercentage.pdf"), width = 7, height = 4)
+pie(cluster_fol$Freq, clockwise=TRUE,
     labels = c("Liberals \n 45% (191,934)","Media \n 24% (102,785)", "Conservatives \n 11% (47,082)", 
                "Netto uyoku \n 19% (82,350)"),
     col = c("#00CED1", "#9ACD32", "Orange", "#FF1493"))
@@ -67,11 +67,13 @@ dev.off()
 ## scatter plot
 ggplot(all_follow[sample(nrow(all_follow), 10000),]) + 
   geom_jitter(aes(conservative, liberal, color=category), alpha=0.7) +
-  labs(x="The rate of following Conservative/Netto uyoku leaders and Matome sites",
-       y="The rate of following Liberal leaders") +
-  scale_color_manual(values = c("#00CED1", "#9ACD32", "Orange", "#FF1493")) +
+  labs(x="The rate of following conservative/Netto uyoku leaders",
+       y="The rate of following liberal leaders") +
+  scale_color_manual(values = c("#00CED1", "#9ACD32", "Orange", "#FF1493"),
+                     labels = c("Liberal followers", "Media followers",
+                                "Conservative followers", "Netto uyoku followers")) +
   theme_bw() +
-  guides(color=guide_legend("Cluster"))
+  guides(color=guide_legend("category"))
 ggsave(paste0(figures.folder, "App Figure 1 FLscatter.pdf"), width = 7, height = 4)
 
 
