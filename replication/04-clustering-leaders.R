@@ -56,7 +56,7 @@ write.csv(freq_accounts, paste0(figures.folder, "App Table 1 freq_accounts.csv")
 ggplot(freq_accounts, aes(immDim1, immDim2)) + 
   geom_point(aes(color=as.factor(cluster), size=followers_count)) +
   labs(x="Dimension 1",y="Dimension 2") +
-  scale_color_manual(labels = c("Liberals", "Conservatives", "Netto uyoku", "Media", "Matome"),
+  scale_color_manual(labels = c("Liberals", "Conservatives", "Netto-uyoku", "Media", "Matome"),
                      values = c("#00CED1", "Orange", "#FF1493", "#9ACD32", "#32CD32")) +
   theme_bw() +
   guides(color=guide_legend("Cluster"))
@@ -70,7 +70,7 @@ cluster_table$Percentage <- cluster_table$Freq / sum(cluster_table$Freq)  ## add
 pdf(paste0(figures.folder, "Figure 2-2 OLpercentage.pdf"), width = 7, height = 4)
 pie(cluster_table$Freq, clockwise = TRUE,
     labels = c("Liberals 46% (43)", "Conservatives 13% (12)",
-               "Netto uyoku 27% (25)", "Media 9% (8)", "Matome 5% (5)"),
+               "Netto-uyoku 27% (25)", "Media 9% (8)", "Matome 5% (5)"),
     col = c("#00CED1", "Orange", "#FF1493", "#9ACD32", "#32CD32"))
 dev.off()
 

@@ -27,14 +27,14 @@ rt_cluster2 <- rt_tw2[,c("category","cluster")] %>% group_by(category, cluster) 
   summarise(count=n())
 ## convert to factor and set names of factor levels
 rt_cluster2$cluster <- as.factor(rt_cluster2$cluster)
-levels(rt_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto uyoku*", "Media*", "Matome*")
+levels(rt_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto-uyoku*", "Media*", "Matome*")
 levels(rt_cluster2$category) <- c("Liberal\nfollowers","Media\nfollowers","Conservative\nfollowers",
-                                  "Netto uyoku\nfollowers")
+                                  "Netto-uyoku\nfollowers")
 
 ## create a palette to visualise
 grid.col2 = c("Liberal\nfollowers"="#00CED1", "Media\nfollowers"="#9ACD32",
-              "Conservative\nfollowers"="Orange", "Netto uyoku\nfollowers"="#FF1493",
-              "Liberal*"="#00CED1", "Conservatives*"="Orange", "Netto uyoku*"="#FF1493",
+              "Conservative\nfollowers"="Orange", "Netto-uyoku\nfollowers"="#FF1493",
+              "Liberal*"="#00CED1", "Conservatives*"="Orange", "Netto-uyoku*"="#FF1493",
               "Media*"="#9ACD32", "Matome*"="#32CD32")
 
 pdf(paste0(figures.folder, "Figure 5-1 rt-interactions.pdf"), width = 5, height = 5)
@@ -62,9 +62,9 @@ ct_cluster2 <- ct_tw2[,c("category","cluster")] %>% group_by(category, cluster) 
   summarise(count=n())
 ## convert to factor and set names of factor levels
 ct_cluster2$cluster <- as.factor(ct_cluster2$cluster)
-levels(ct_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto uyoku*", "Media*", "Matome*")
+levels(ct_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto-uyoku*", "Media*", "Matome*")
 levels(ct_cluster2$category) <- c("Liberal\nfollowers","Media\nfollowers","Conservative\nfollowers",
-                                  "Netto uyoku\nfollowers")
+                                  "Netto-uyoku\nfollowers")
 
 pdf(paste0(figures.folder, "Figure 5-2 qt-interactions.pdf"), width = 5, height = 5)
 chordDiagram(ct_cluster2, grid.col = grid.col2, annotationTrack = "grid", 
@@ -90,9 +90,9 @@ mt_cluster2 <- mt_tw2[,c("category","cluster")] %>% group_by(category, cluster) 
   summarise(count=n())
 ## convert to factor and set names of factor levels
 mt_cluster2$cluster <- as.factor(mt_cluster2$cluster)
-levels(mt_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto uyoku*", "Media*", "Matome*")
+levels(mt_cluster2$cluster) <- c("Liberal*", "Conservatives*", "Netto-uyoku*", "Media*", "Matome*")
 levels(mt_cluster2$category) <- c("Liberal\nfollowers","Media\nfollowers","Conservative\nfollowers",
-                                  "Netto uyoku\nfollowers")
+                                  "Netto-uyoku\nfollowers")
 
 pdf(paste0(figures.folder, "Figure 5-3 rp-interactions.pdf"), width = 5, height = 5)
 chordDiagram(mt_cluster2, grid.col = grid.col2, annotationTrack = "grid", 

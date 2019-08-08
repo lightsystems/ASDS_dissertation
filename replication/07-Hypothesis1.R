@@ -35,8 +35,8 @@ table_follow <- table_follow[table_follow$Var2 != "Media",]
 ## create a bar chart
 ggplot(table_follow) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
-  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
-  scale_fill_brewer(palette = "Reds",name = "follow opposite") +
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto-uyoku\nfollowers")) +
+  scale_fill_brewer(palette = "Reds",name = "follow\nthe opposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "Figure 4-1 follow-zero.pdf"), width = 6, height = 3)
 
@@ -216,10 +216,10 @@ table_act <- table_act[table_act$Var2 != "Media",]
 ## create a graph
 ggplot(table_act) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
-  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
-  scale_fill_brewer(palette = "Reds",name="action to opposite") +
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto-uyoku\nfollowers")) +
+  scale_fill_brewer(palette = "Reds",name="responses to\nthe opposite") +
   theme_bw()
-ggsave(paste0(figures.folder, "Figure 4-2 action-zero.pdf"), width = 6, height = 3)
+ggsave(paste0(figures.folder, "Figure 4-2 response-zero.pdf"), width = 6, height = 3)
 
 
 ## for each action
@@ -228,7 +228,7 @@ table_rt <- table_rt[table_rt$Var2 != "Media",]
 
 ggplot(table_rt) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
-  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto-uyoku\nfollowers")) +
   scale_fill_brewer(palette = "Reds",name = "retweet opposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "App Figure 2-1 retweet-zero.pdf"), width = 6, height = 3)
@@ -239,7 +239,7 @@ table_qt <- table_qt[table_qt$Var2 != "Media",]
 
 ggplot(table_qt) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
-  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto-uyoku\nfollowers")) +
   scale_fill_brewer(palette = "Reds",name = "quote retweet\nopposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "App Figure 2-2 quote retweet-zero.pdf"), width = 6, height = 3)
@@ -249,7 +249,7 @@ table_rp <- table_rp[table_rp$Var2 != "Media",]
 
 ggplot(table_rp) + geom_bar(aes(Var2, Freq, fill=Var1), stat="identity") +
   xlab("category") + 
-  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto uyoku\nfollowers")) +
+  scale_x_discrete(labels=c("Liberal\nfollowers", "Conservative\nfollowers", "Netto-uyoku\nfollowers")) +
   scale_fill_brewer(palette = "Reds",name = "reply opposite") +
   theme_bw()
 ggsave(paste0(figures.folder, "App Figure 2-3 reply-zero.pdf"), width = 6, height = 3)
